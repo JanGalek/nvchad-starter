@@ -13,6 +13,32 @@ return {
     end,
   },
 
+  -- file managing , picker etc
+  {
+    "nvim-tree/nvim-tree.lua",
+    cmd = { "NvimTreeToggle", "NvimTreeFocus" },
+    opts = function()
+      local defaultconf = require "nvchad.configs.nvimtree"
+      local myconf = {
+        filters = {
+          custom = {
+            '.git', '.idea'
+          },
+          exclude = {
+            'vendor', 'node_modules'
+          }
+        },
+        git = {
+          enable = true,
+          ignore = false,
+        },
+      }
+
+      return vim.tbl_deep_extend('force', myconf, defaultconf)
+--      return require "nvchad.configs.nvimtree"
+    end,
+  },
+
   -- {
   -- 	"nvim-treesitter/nvim-treesitter",
   -- 	opts = {
