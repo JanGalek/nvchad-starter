@@ -36,7 +36,7 @@ return {
             '.git', '.idea'
           },
           exclude = {
-            'vendor', 'node_modules'
+            'vendor', 'node_modules', '.gitignore'
           }
         },
         git = {
