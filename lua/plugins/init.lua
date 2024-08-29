@@ -1,3 +1,14 @@
+vim.api.nvim_create_autocmd("VimEnter", {
+    callback = function()
+        -- Zkontroluje, jestli nejsou otevřeny žádné soubory
+        local is_empty = vim.fn.argc() == 0
+
+        if is_empty then
+            require("nvim-tree.api").tree.open()
+        end
+    end,
+})
+
 return {
   {
     "stevearc/conform.nvim",
