@@ -25,6 +25,7 @@ lspconfig.phpactor.setup {
   capabilities = nvlsp.capabilities,
   init_options = {
     ["language_server_phpstan.enabled"] = true,
+    ["phpunit.enabled"] = true,
   }
 }
 
